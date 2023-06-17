@@ -3,12 +3,17 @@ import ProfileSection from "./ProfileSection"
 import Title from "./Title"
 import styles from "./styles.module.css"
 
+function handleClick(ev) {
+  alert("você agora está seguindo!")
+}
+
 export default function Profile(props) {
   return (
     <div className={styles.container}>
       <img className={styles.avatar} src={props.avatar} alt={props.name} />
       <Title>
-        {props.name}        
+        <span>{props.name}</span>
+        <button className={styles.followButton} onClick={handleClick}>Follow</button>      
       </Title>
       <ProfileSection>{props.bios}</ProfileSection>
       <ProfileSection>{props.phone}</ProfileSection>
